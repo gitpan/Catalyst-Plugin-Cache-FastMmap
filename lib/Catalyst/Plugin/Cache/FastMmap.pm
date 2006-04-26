@@ -5,7 +5,7 @@ use base 'Class::Data::Inheritable';
 
 use Cache::FastMmap;
 
-our $VERSION= '0.5';
+our $VERSION= '0.6';
 
 __PACKAGE__->mk_classdata('cache');
 
@@ -44,7 +44,7 @@ Catalyst::Plugin::Cache::FastMmap - Mmap cache
 
     use Catalyst qw[Cache::FastMmap];
 
-    MyApp->config->{cache}->{storage} = '/tmp';
+    MyApp->config->{cache}->{storage} = '/tmp/cache';
     MyApp->config->{cache}->{expires} = 3600;
 
     my $data;
@@ -59,7 +59,10 @@ Catalyst::Plugin::Cache::FastMmap - Mmap cache
 
 =head1 DESCRIPTION
 
-Extends base class with a C<mmap> cache.
+This package is part of the Catalyst Cache family. It allows
+integration of L<Cache::FastMmap> and L<Catalyst>
+
+This module extends the Catalyst application class with a C<mmap> cache.
 
 =head1 METHODS
 

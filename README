@@ -4,7 +4,7 @@ NAME
 SYNOPSIS
         use Catalyst qw[Cache::FastMmap];
 
-        MyApp->config->{cache}->{storage} = '/tmp';
+        MyApp->config->{cache}->{storage} = '/tmp/cache';
         MyApp->config->{cache}->{expires} = 3600;
 
         my $data;
@@ -17,7 +17,10 @@ SYNOPSIS
         $c->response->body($data);
 
 DESCRIPTION
-    Extends base class with a "mmap" cache.
+    This package is part of the Catalyst Cache family. It allows integration
+    of Cache::FastMmap and Catalyst
+
+    This module extends the Catalyst application class with a "mmap" cache.
 
 METHODS
     cache
