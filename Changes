@@ -1,7 +1,10 @@
 Revision history for Perl extension Catalyst::Plugin::Cache::FastMmap
 
+0.7  2007-04-29 02:05:00
+     - Switch to Module-Install
+
 0.6  Wed Apr 26 17:46:00 2006
-	- pod cleanups
+     - pod cleanups
 
 0.5  Tue Apr 23 01:00:00 2005
-        - original version.
+     - original version.

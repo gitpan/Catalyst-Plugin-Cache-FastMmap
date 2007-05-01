@@ -5,7 +5,7 @@ use base 'Class::Data::Inheritable';
 
 use Cache::FastMmap;
 
-our $VERSION= '0.6';
+our $VERSION= '0.7';
 
 __PACKAGE__->mk_classdata('cache');
 
