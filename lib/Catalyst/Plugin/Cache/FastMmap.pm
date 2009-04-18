@@ -4,8 +4,9 @@ use strict;
 use base 'Class::Data::Inheritable';
 
 use Cache::FastMmap;
+use MRO::Compat;
 
-our $VERSION= '0.71';
+our $VERSION= '0.8';
 
 __PACKAGE__->mk_classdata('cache');
 
@@ -28,7 +29,7 @@ sub setup {
 
     $self->cache( Cache::FastMmap->new(%params) );
 
-    return $self->NEXT::setup(@_);
+    return $self->next::method(@_);
 }
 
 1;

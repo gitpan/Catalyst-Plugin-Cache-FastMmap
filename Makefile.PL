@@ -7,6 +7,7 @@ all_from 'lib/Catalyst/Plugin/Cache/FastMmap.pm';
 
 requires 'Catalyst::Runtime' => '5.7006';
 requires 'Cache::FastMmap';
+requires 'MRO::Compat' => '0.10';
 
 auto_install;
 WriteAll;
