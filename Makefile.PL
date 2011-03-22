@@ -1,13 +1,14 @@
 use strict;
 use warnings;
-use inc::Module::Install 0.65;
+use inc::Module::Install 0.87;
 
 name 'Catalyst-Plugin-Cache-FastMmap';
 all_from 'lib/Catalyst/Plugin/Cache/FastMmap.pm';
 
 requires 'Catalyst::Runtime' => '5.7006';
 requires 'Cache::FastMmap';
-requires 'MRO::Compat' => '0.10';
+requires 'MRO::Compat';
 
-auto_install;
+resources repository => 'http://dev.catalyst.perl.org/repos/Catalyst/trunk/Catalyst-Plugin-Cache-FastMmap/';
+
 WriteAll;

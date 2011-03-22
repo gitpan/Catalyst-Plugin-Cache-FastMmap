@@ -1,12 +1,13 @@
 package Catalyst::Plugin::Cache::FastMmap;
 
 use strict;
+use warnings;
+use MRO::Compat;
 use base 'Class::Data::Inheritable';
 
 use Cache::FastMmap;
-use MRO::Compat;
 
-our $VERSION= '0.8';
+our $VERSION= '0.9';
 
 __PACKAGE__->mk_classdata('cache');
 
@@ -39,14 +40,18 @@ __END__
 
 =head1 NAME
 
-Catalyst::Plugin::Cache::FastMmap - Mmap cache
+Catalyst::Plugin::Cache::FastMmap - DEPRECATED FastMmap cache
 
 =head1 SYNOPSIS
 
     use Catalyst qw[Cache::FastMmap];
 
-    MyApp->config->{cache}->{storage} = '/tmp/cache';
-    MyApp->config->{cache}->{expires} = 3600;
+    MyApp->config(
+        cache => {
+            storage => '/tmp/cache',
+            xpires => 3600,
+        },
+    );
 
     my $data;
 
@@ -65,9 +70,16 @@ integration of L<Cache::FastMmap> and L<Catalyst>
 
 This module extends the Catalyst application class with a C<mmap> cache.
 
+This module is not recommended for production use, as L<Cache::FastMmap> can
+segfault and/or unexpectedly throw away your data.
+
 =head1 METHODS
 
-=over 4
+=over
+
+=item setup
+
+Sets up the cache
 
 =item cache
 
@@ -82,11 +94,16 @@ L<Cache::FastMmap>, L<Catalyst>.
 =head1 AUTHOR
 
 Christian Hansen, C<ch@ngmedia.com>
-Sebastian Riedel C<sri@oook.de>
+
+Sebastian Riedel, C<sri@oook.de>
 
 =head1 LICENSE
 
 This library is free software . You can redistribute it and/or modify it under
 the same terms as perl itself.
+
+=head1 COPYRIGHT
+
+Copyright (c) 2005-2011, the above mentioned AUTHORs.
 
 =cut

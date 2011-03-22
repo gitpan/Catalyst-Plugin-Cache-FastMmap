@@ -1,11 +1,8 @@
 Changes
-inc/Module/AutoInstall.pm
 inc/Module/Install.pm
-inc/Module/Install/AutoInstall.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
-inc/Module/Install/Include.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
@@ -16,5 +13,5 @@ MANIFEST			This list of files
 META.yml
 README
 t/01use.t
-t/02pod.t
-t/03podcoverage.t
+xt/02pod.t
+xt/03podcoverage.t
